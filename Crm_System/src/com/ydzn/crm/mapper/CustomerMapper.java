@@ -16,15 +16,21 @@ public interface CustomerMapper {
 
     int insertSelective(Customer record);
 
+    List<Customer> selectByExampleWithBLOBs(CustomerExample example);
+
     List<Customer> selectByExample(CustomerExample example);
 
     Customer selectByPrimaryKey(Integer customid);
 
     int updateByExampleSelective(@Param("record") Customer record, @Param("example") CustomerExample example);
 
+    int updateByExampleWithBLOBs(@Param("record") Customer record, @Param("example") CustomerExample example);
+
     int updateByExample(@Param("record") Customer record, @Param("example") CustomerExample example);
 
     int updateByPrimaryKeySelective(Customer record);
+
+    int updateByPrimaryKeyWithBLOBs(Customer record);
 
     int updateByPrimaryKey(Customer record);
 }

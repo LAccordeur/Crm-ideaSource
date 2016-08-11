@@ -15,6 +15,8 @@ public class Activity {
 
     private String activitydetail;
 
+    private Boolean activitystate;
+
     private byte[] activitypic;
 
     public Integer getActivityid() {
@@ -63,6 +65,14 @@ public class Activity {
 
     public void setActivitydetail(String activitydetail) {
         this.activitydetail = activitydetail == null ? null : activitydetail.trim();
+    }
+
+    public Boolean getAcitvitystate() {
+        return activitystate;
+    }
+
+    public void setAcitvitystate(Boolean activitystate) {
+        this.activitystate = activitystate;
     }
 
     public byte[] getActivitypic() {

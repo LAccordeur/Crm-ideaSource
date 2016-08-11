@@ -7,7 +7,9 @@ public class Customer {
 
     private String customname;
 
-    private Long bonuspoint;
+    private Integer bonuspoint;
+
+    private byte[] custompic;
 
     public Integer getCustomid() {
         return customid;
@@ -33,11 +35,19 @@ public class Customer {
         this.customname = customname == null ? null : customname.trim();
     }
 
-    public Long getBonuspoint() {
+    public Integer getBonuspoint() {
         return bonuspoint;
     }
 
-    public void setBonuspoint(Long bonuspoint) {
+    public void setBonuspoint(Integer bonuspoint) {
         this.bonuspoint = bonuspoint;
+    }
+
+    public byte[] getCustompic() {
+        return custompic;
+    }
+
+    public void setCustompic(byte[] custompic) {
+        this.custompic = custompic;
     }
 }

@@ -7,7 +7,7 @@ public class Goods {
 
     private Float goodsmoney;
 
-    private Long goodsstorage;
+    private Integer goodsstorage;
 
     private byte[] goodspic;
 
@@ -35,11 +35,11 @@ public class Goods {
         this.goodsmoney = goodsmoney;
     }
 
-    public Long getGoodsstorage() {
+    public Integer getGoodsstorage() {
         return goodsstorage;
     }
 
-    public void setGoodsstorage(Long goodsstorage) {
+    public void setGoodsstorage(Integer goodsstorage) {
         this.goodsstorage = goodsstorage;
     }
 

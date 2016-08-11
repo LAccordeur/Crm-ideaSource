@@ -314,52 +314,52 @@ public class CustomerExample {
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointEqualTo(Long value) {
+        public Criteria andBonuspointEqualTo(Integer value) {
             addCriterion("BonusPoint =", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointNotEqualTo(Long value) {
+        public Criteria andBonuspointNotEqualTo(Integer value) {
             addCriterion("BonusPoint <>", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointGreaterThan(Long value) {
+        public Criteria andBonuspointGreaterThan(Integer value) {
             addCriterion("BonusPoint >", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointGreaterThanOrEqualTo(Long value) {
+        public Criteria andBonuspointGreaterThanOrEqualTo(Integer value) {
             addCriterion("BonusPoint >=", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointLessThan(Long value) {
+        public Criteria andBonuspointLessThan(Integer value) {
             addCriterion("BonusPoint <", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointLessThanOrEqualTo(Long value) {
+        public Criteria andBonuspointLessThanOrEqualTo(Integer value) {
             addCriterion("BonusPoint <=", value, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointIn(List<Long> values) {
+        public Criteria andBonuspointIn(List<Integer> values) {
             addCriterion("BonusPoint in", values, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointNotIn(List<Long> values) {
+        public Criteria andBonuspointNotIn(List<Integer> values) {
             addCriterion("BonusPoint not in", values, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointBetween(Long value1, Long value2) {
+        public Criteria andBonuspointBetween(Integer value1, Integer value2) {
             addCriterion("BonusPoint between", value1, value2, "bonuspoint");
             return (Criteria) this;
         }
 
-        public Criteria andBonuspointNotBetween(Long value1, Long value2) {
+        public Criteria andBonuspointNotBetween(Integer value1, Integer value2) {
             addCriterion("BonusPoint not between", value1, value2, "bonuspoint");
             return (Criteria) this;
         }

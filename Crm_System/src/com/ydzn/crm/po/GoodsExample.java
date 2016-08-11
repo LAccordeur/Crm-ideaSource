@@ -304,52 +304,52 @@ public class GoodsExample {
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageEqualTo(Long value) {
+        public Criteria andGoodsstorageEqualTo(Integer value) {
             addCriterion("GoodsStorage =", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageNotEqualTo(Long value) {
+        public Criteria andGoodsstorageNotEqualTo(Integer value) {
             addCriterion("GoodsStorage <>", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageGreaterThan(Long value) {
+        public Criteria andGoodsstorageGreaterThan(Integer value) {
             addCriterion("GoodsStorage >", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageGreaterThanOrEqualTo(Long value) {
+        public Criteria andGoodsstorageGreaterThanOrEqualTo(Integer value) {
             addCriterion("GoodsStorage >=", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageLessThan(Long value) {
+        public Criteria andGoodsstorageLessThan(Integer value) {
             addCriterion("GoodsStorage <", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageLessThanOrEqualTo(Long value) {
+        public Criteria andGoodsstorageLessThanOrEqualTo(Integer value) {
             addCriterion("GoodsStorage <=", value, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageIn(List<Long> values) {
+        public Criteria andGoodsstorageIn(List<Integer> values) {
             addCriterion("GoodsStorage in", values, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageNotIn(List<Long> values) {
+        public Criteria andGoodsstorageNotIn(List<Integer> values) {
             addCriterion("GoodsStorage not in", values, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageBetween(Long value1, Long value2) {
+        public Criteria andGoodsstorageBetween(Integer value1, Integer value2) {
             addCriterion("GoodsStorage between", value1, value2, "goodsstorage");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsstorageNotBetween(Long value1, Long value2) {
+        public Criteria andGoodsstorageNotBetween(Integer value1, Integer value2) {
             addCriterion("GoodsStorage not between", value1, value2, "goodsstorage");
             return (Criteria) this;
         }
