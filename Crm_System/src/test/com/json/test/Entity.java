@@ -14,6 +14,7 @@ public class Entity {
 //                ", name='" + name + '\'' +
 //                '}';
 //    }
+//
 
     public int getId() {
         return id;
