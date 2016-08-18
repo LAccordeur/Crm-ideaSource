@@ -1,8 +1,9 @@
 package com.ydzn.crm.controller.Json;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
@@ -27,34 +28,27 @@ public class MyJsonResponse {
 
     //封装list
     public static void responseList(HttpServletResponse response, Collection list) throws Exception{
-        initial();
-        if(jsonArray == null){
-            jsonArray = new JSONArray(list);
-            response.setContentType("text/html; charset=GBk");
-            response.getWriter().println(jsonArray.toString());
-        }
+
+        response.setContentType("text/html; charset=GBk");
+        response.getWriter().println(JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss.SSS"));
 
     }
 
     //封装pojo
     public static void responsePojo(HttpServletResponse response, Object object) throws Exception{
-        initial();
-        if(jsonObject == null){
-            JSONObject jsonObject = new JSONObject(object);
-            response.setContentType("text/html; charset=GBk");
-            response.getWriter().println(jsonObject.toString());
-        }
 
+        response.getWriter().println(JSON.toJSONString(object));
     }
 
     //封装简单类型
     public static void responseObject(HttpServletResponse response, String str, Object object)throws Exception{
         initial();
         if(jsonObject == null){
-            jsonObject = new JSONObject().put(str,object);
+            jsonObject = new JSONObject();
+            jsonObject.put(str,object);
+
             response.getWriter().println(jsonObject.toString());
         }
-
     }
 
     ////添加错误

@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public interface BonusPointService {
     //录入积分
-    public boolean logCreditAndHistory(int telephoneNumber, int bonusPoint, Map<Integer,Integer> goodsMap) throws  Exception;
+    public boolean logCreditAndHistory(int telephoneNumber, int bonusPoint, Map<String,Integer> goodsMap) throws  Exception;
 
     // 查看会员列表（显示会员积分榜）
     public List<Customer> getCustomersCreditByOrder() throws Exception;

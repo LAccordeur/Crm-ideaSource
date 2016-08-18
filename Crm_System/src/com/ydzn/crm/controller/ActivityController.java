@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +20,6 @@ import java.util.List;
  * Created by HeathHose on 2016/8/4.
  */
 @Controller
-@RequestMapping("/Crm_system")
 public class ActivityController {
 
     @Autowired
@@ -36,10 +36,15 @@ public class ActivityController {
     }
 
     //更新活动信息
-    @RequestMapping("/updateActivityInf")
+    @RequestMapping("/updateActivityInfo")
     public void updateActivityInfo(HttpServletRequest request,HttpServletResponse response) throws  Exception{
+        request.setCharacterEncoding("GBK");
         String activityID = request.getParameter("ActivityID");
-        Activity activity = (Activity) request.getAttribute("Activity");
+        Activity activity = new Activity();
+        activity.setActivityid(Integer.parseInt(activityID));
+        activity.setActivityname(request.getParameter("ActivityName"));
+        activity.setActivitystarttime(request.getParameter("ActivityStartTime"));
+        activity.setActivitycuttime(request.getParameter("ActivityCutTime"));
 
         //测试数据
         //String activityID="3";
@@ -61,12 +66,12 @@ public class ActivityController {
     @RequestMapping("/updateAcitvityState")
     public void updateAcitvityState(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
-        //Boolean bool =  Boolean.parseBoolean(request.getParameter("boolean"));
-        //int activityID = Integer.parseInt(request.getParameter("activityID"));
+        Boolean bool =  Boolean.parseBoolean(request.getParameter("boolean"));
+        int activityID = Integer.parseInt(request.getParameter("activityID"));
 
         //测试数据
-        Boolean bool = true;
-        int activityID=1;
+        //Boolean bool = true;
+        //int activityID=1;
 
         Boolean state = activityService.updateAcitvityState(activityID,bool);
 
@@ -80,13 +85,18 @@ public class ActivityController {
     //新增已编辑活动
     @RequestMapping("/insertActivity")
     public void insertActivity(HttpServletRequest request,HttpServletResponse response) throws Exception{
-        //Activity activity = (Activity) request.getAttribute("Activity");
 
         //测试数据
+        //Activity activity = new Activity();
+        //activity.setActivityname("超级无敌活动");
+        //activity.setActivitystate(false);
+        request.setCharacterEncoding("GBK");
         Activity activity = new Activity();
-        activity.setAccountid(1);
-        activity.setActivityname("超级无敌活动");
-        activity.setAcitvitystate(false);
+        activity.setActivityname(request.getParameter("ActivityName"));
+        activity.setAccountid(Integer.parseInt(request.getParameter("AccountID")));
+        activity.setActivitycuttime(request.getParameter("ActivityCutTime"));
+        activity.setActivitystarttime(request.getParameter("ActivityStartTime"));
+        activity.setActivitydetail(request.getParameter("ActivityDetail"));
 
         if(activityService.insertActivity(activity)){
             // 把bool封装成JSONObject

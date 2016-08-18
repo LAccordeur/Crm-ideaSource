@@ -1,8 +1,6 @@
 package com.ydzn.crm.po;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class ShopownerExample {
@@ -104,32 +102,6 @@ public class ShopownerExample {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
-        }
-
-        protected void addCriterionForJDBCTime(String condition, Date value, String property) {
-            if (value == null) {
-                throw new RuntimeException("Value for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Time(value.getTime()), property);
-        }
-
-        protected void addCriterionForJDBCTime(String condition, List<Date> values, String property) {
-            if (values == null || values.size() == 0) {
-                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
-            }
-            List<java.sql.Time> timeList = new ArrayList<java.sql.Time>();
-            Iterator<Date> iter = values.iterator();
-            while (iter.hasNext()) {
-                timeList.add(new java.sql.Time(iter.next().getTime()));
-            }
-            addCriterion(condition, timeList, property);
-        }
-
-        protected void addCriterionForJDBCTime(String condition, Date value1, Date value2, String property) {
-            if (value1 == null || value2 == null) {
-                throw new RuntimeException("Between values for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Time(value1.getTime()), new java.sql.Time(value2.getTime()), property);
         }
 
         public Criteria andAccountidIsNull() {
@@ -412,53 +384,63 @@ public class ShopownerExample {
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeEqualTo(Date value) {
-            addCriterionForJDBCTime("OpeningTime =", value, "openingtime");
+        public Criteria andOpeningtimeEqualTo(String value) {
+            addCriterion("OpeningTime =", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeNotEqualTo(Date value) {
-            addCriterionForJDBCTime("OpeningTime <>", value, "openingtime");
+        public Criteria andOpeningtimeNotEqualTo(String value) {
+            addCriterion("OpeningTime <>", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeGreaterThan(Date value) {
-            addCriterionForJDBCTime("OpeningTime >", value, "openingtime");
+        public Criteria andOpeningtimeGreaterThan(String value) {
+            addCriterion("OpeningTime >", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("OpeningTime >=", value, "openingtime");
+        public Criteria andOpeningtimeGreaterThanOrEqualTo(String value) {
+            addCriterion("OpeningTime >=", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeLessThan(Date value) {
-            addCriterionForJDBCTime("OpeningTime <", value, "openingtime");
+        public Criteria andOpeningtimeLessThan(String value) {
+            addCriterion("OpeningTime <", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("OpeningTime <=", value, "openingtime");
+        public Criteria andOpeningtimeLessThanOrEqualTo(String value) {
+            addCriterion("OpeningTime <=", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeIn(List<Date> values) {
-            addCriterionForJDBCTime("OpeningTime in", values, "openingtime");
+        public Criteria andOpeningtimeLike(String value) {
+            addCriterion("OpeningTime like", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeNotIn(List<Date> values) {
-            addCriterionForJDBCTime("OpeningTime not in", values, "openingtime");
+        public Criteria andOpeningtimeNotLike(String value) {
+            addCriterion("OpeningTime not like", value, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("OpeningTime between", value1, value2, "openingtime");
+        public Criteria andOpeningtimeIn(List<String> values) {
+            addCriterion("OpeningTime in", values, "openingtime");
             return (Criteria) this;
         }
 
-        public Criteria andOpeningtimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("OpeningTime not between", value1, value2, "openingtime");
+        public Criteria andOpeningtimeNotIn(List<String> values) {
+            addCriterion("OpeningTime not in", values, "openingtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpeningtimeBetween(String value1, String value2) {
+            addCriterion("OpeningTime between", value1, value2, "openingtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpeningtimeNotBetween(String value1, String value2) {
+            addCriterion("OpeningTime not between", value1, value2, "openingtime");
             return (Criteria) this;
         }
 
@@ -472,53 +454,63 @@ public class ShopownerExample {
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeEqualTo(Date value) {
-            addCriterionForJDBCTime("ClosingTime =", value, "closingtime");
+        public Criteria andClosingtimeEqualTo(String value) {
+            addCriterion("ClosingTime =", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeNotEqualTo(Date value) {
-            addCriterionForJDBCTime("ClosingTime <>", value, "closingtime");
+        public Criteria andClosingtimeNotEqualTo(String value) {
+            addCriterion("ClosingTime <>", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeGreaterThan(Date value) {
-            addCriterionForJDBCTime("ClosingTime >", value, "closingtime");
+        public Criteria andClosingtimeGreaterThan(String value) {
+            addCriterion("ClosingTime >", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("ClosingTime >=", value, "closingtime");
+        public Criteria andClosingtimeGreaterThanOrEqualTo(String value) {
+            addCriterion("ClosingTime >=", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeLessThan(Date value) {
-            addCriterionForJDBCTime("ClosingTime <", value, "closingtime");
+        public Criteria andClosingtimeLessThan(String value) {
+            addCriterion("ClosingTime <", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("ClosingTime <=", value, "closingtime");
+        public Criteria andClosingtimeLessThanOrEqualTo(String value) {
+            addCriterion("ClosingTime <=", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeIn(List<Date> values) {
-            addCriterionForJDBCTime("ClosingTime in", values, "closingtime");
+        public Criteria andClosingtimeLike(String value) {
+            addCriterion("ClosingTime like", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeNotIn(List<Date> values) {
-            addCriterionForJDBCTime("ClosingTime not in", values, "closingtime");
+        public Criteria andClosingtimeNotLike(String value) {
+            addCriterion("ClosingTime not like", value, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("ClosingTime between", value1, value2, "closingtime");
+        public Criteria andClosingtimeIn(List<String> values) {
+            addCriterion("ClosingTime in", values, "closingtime");
             return (Criteria) this;
         }
 
-        public Criteria andClosingtimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("ClosingTime not between", value1, value2, "closingtime");
+        public Criteria andClosingtimeNotIn(List<String> values) {
+            addCriterion("ClosingTime not in", values, "closingtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClosingtimeBetween(String value1, String value2) {
+            addCriterion("ClosingTime between", value1, value2, "closingtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClosingtimeNotBetween(String value1, String value2) {
+            addCriterion("ClosingTime not between", value1, value2, "closingtime");
             return (Criteria) this;
         }
 

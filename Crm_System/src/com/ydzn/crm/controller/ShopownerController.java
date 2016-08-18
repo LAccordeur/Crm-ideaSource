@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -43,10 +44,9 @@ public class ShopownerController {
     //获取商家信息
     @RequestMapping("/getShopownerInf")
     public void getShopownerInf(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        int userID=1;
         Shopowner owner;
+        int userID= Integer.parseInt(request.getParameter("ShopownerID"));
 
-        //userID= Integer.parseInt(request.getParameter("userID"));
         owner = shopownerServiceIml.getShopownerInf(userID);
         if(owner != null){
             // 把owner封装成JSONObject
@@ -59,16 +59,24 @@ public class ShopownerController {
     //更新商家信息
     @RequestMapping("/updateShopownerInf")
     public  void updateShopownerInf(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        //获取信息
         String userID = request.getParameter("AccountID");
-        Shopowner owner = (Shopowner) request.getAttribute("shopowner");
+        Shopowner owner = new Shopowner();
+        owner.setAccountid(Integer.parseInt(userID));
+        owner.setAccountname(request.getParameter("AccountName"));
+        owner.setAccountaddress(request.getParameter("AccountAddress"));
+        owner.setOpeningtime(request.getParameter("OpeningTime"));
+        owner.setClosingtime(request.getParameter("ClosingTime"));
+        owner.setAccountdetail(request.getParameter("AccountDetail"));
 
         //测试数据
-        //        userID="6";
+        //        String userID="6";
         //        Shopowner owner = new Shopowner();
         //        owner.setAccountid(6);
-        //        owner.setAccountname("supermary");
+        //        owner.setAccountname("supermary1111");
         //        owner.setAccountaddress("成都");
-        //        owner.setOpeningtime(new Date());
+        //        owner.setOpeningtime(new Time(""));
         //        owner.setClosingtime(new Date());
 
         if(shopownerServiceIml.updateShopownerInf(Integer.parseInt(userID),owner)){

@@ -1,7 +1,5 @@
 package com.ydzn.crm.po;
 
-import java.util.Date;
-
 public class Shopowner {
     private Integer accountid;
 
@@ -11,9 +9,9 @@ public class Shopowner {
 
     private String accountaddress;
 
-    private Date openingtime;
+    private String openingtime;
 
-    private Date closingtime;
+    private String closingtime;
 
     private String accountdetail;
 
@@ -51,20 +49,20 @@ public class Shopowner {
         this.accountaddress = accountaddress == null ? null : accountaddress.trim();
     }
 
-    public Date getOpeningtime() {
+    public String getOpeningtime() {
         return openingtime;
     }
 
-    public void setOpeningtime(Date openingtime) {
-        this.openingtime = openingtime;
+    public void setOpeningtime(String openingtime) {
+        this.openingtime = openingtime == null ? null : openingtime.trim();
     }
 
-    public Date getClosingtime() {
+    public String getClosingtime() {
         return closingtime;
     }
 
-    public void setClosingtime(Date closingtime) {
-        this.closingtime = closingtime;
+    public void setClosingtime(String closingtime) {
+        this.closingtime = closingtime == null ? null : closingtime.trim();
     }
 
     public String getAccountdetail() {

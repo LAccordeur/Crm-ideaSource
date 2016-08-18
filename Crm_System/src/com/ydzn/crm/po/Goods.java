@@ -9,6 +9,8 @@ public class Goods {
 
     private Integer goodsstorage;
 
+    private String goodsdetail;
+
     private byte[] goodspic;
 
     public Integer getGoodsid() {
@@ -41,6 +43,14 @@ public class Goods {
 
     public void setGoodsstorage(Integer goodsstorage) {
         this.goodsstorage = goodsstorage;
+    }
+
+    public String getGoodsdetail() {
+        return goodsdetail;
+    }
+
+    public void setGoodsdetail(String goodsdetail) {
+        this.goodsdetail = goodsdetail == null ? null : goodsdetail.trim();
     }
 
     public byte[] getGoodspic() {

@@ -24,25 +24,6 @@ public class ActivityServiceImplTest {
     @Test
     public void updateActivityInfo() throws Exception {
 
-        String activityID="3";
-        Activity activity = new Activity();
-        activity.setActivityid(Integer.parseInt(activityID));
-        activity.setAccountid(1);
-        activity.setActivityname("跳楼");
-        activity.setActivitystarttime(new Date());
-        activity.setActivitycuttime(new Date());
-
-        activityService.updateActivityInfo(Integer.parseInt(activityID),activity);
-
-        //测试HashMap的键值唯一性
-        //HashMap<String,Object> map = new HashMap<String, Object>();
-        //map.put("state",1);
-        //Boolean bool = true;
-        //map.put("hh",bool);
-        //
-        //map.put("hh","chongfu");
-        //
-        //System.out.println(map.get("hh"));
 
 
 

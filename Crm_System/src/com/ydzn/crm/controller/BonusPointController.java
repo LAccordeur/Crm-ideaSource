@@ -1,5 +1,6 @@
 package com.ydzn.crm.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.ydzn.crm.controller.Json.MyJsonResponse;
 import com.ydzn.crm.po.Customer;
 import com.ydzn.crm.service.BonusPointService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sun.misc.Contended;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -29,12 +31,13 @@ public class BonusPointController {
     private BonusPointService bonusPointService;
 
     //录入积分 添加消费记录
-    @RequestMapping("/logCredit")
+    @RequestMapping("/logCreditAndHistory")
     public void logCredit(HttpServletRequest request, HttpServletResponse response) throws Exception{
 
         int telephoneNumber = Integer.parseInt(request.getParameter("TelephoneNumber"));
         int bonusPoint = Integer.parseInt(request.getParameter("BonusPoint"));
-        HashMap<Integer,Integer> goodsMap = (HashMap<Integer, Integer>) request.getAttribute("goodsMap");
+        String goodsMapJson = request.getParameter("goodsMap");
+        Map<String,Integer> goodsMap = (Map<String, Integer>) JSON.parse(goodsMapJson);
 
         //测试数据
         //HashMap<Integer,Integer> goodsMap = new HashMap<Integer, Integer>();
@@ -51,7 +54,7 @@ public class BonusPointController {
     }
 
     // 查看会员列表（显示会员积分榜）
-    @RequestMapping("/getCustomersCredit")
+    @RequestMapping("/getCustomersCreditByOrder")
     public  void getCustomersCreditByOrder(HttpServletResponse response) throws Exception{
         List<Customer> list =  bonusPointService.getCustomersCreditByOrder();
         //list.get(0);

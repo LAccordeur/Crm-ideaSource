@@ -50,12 +50,14 @@ public class ShopownerServiceIml implements ShopownerService {
 
     //获取商家信息
     @Override
-    public Shopowner getShopownerInf(int userId) throws Exception {
+    public  Shopowner getShopownerInf(int userId) throws Exception {
         Shopowner owner;
 
         owner = shopownerMapper.selectByPrimaryKey(userId);
         return owner;
     }
+
+
 
     //更新商家信息
     @Override

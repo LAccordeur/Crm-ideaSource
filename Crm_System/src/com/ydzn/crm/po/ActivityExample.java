@@ -1,7 +1,6 @@
 package com.ydzn.crm.po;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ActivityExample {
@@ -305,52 +304,62 @@ public class ActivityExample {
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeEqualTo(Date value) {
+        public Criteria andActivitystarttimeEqualTo(String value) {
             addCriterion("ActivityStartTime =", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeNotEqualTo(Date value) {
+        public Criteria andActivitystarttimeNotEqualTo(String value) {
             addCriterion("ActivityStartTime <>", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeGreaterThan(Date value) {
+        public Criteria andActivitystarttimeGreaterThan(String value) {
             addCriterion("ActivityStartTime >", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andActivitystarttimeGreaterThanOrEqualTo(String value) {
             addCriterion("ActivityStartTime >=", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeLessThan(Date value) {
+        public Criteria andActivitystarttimeLessThan(String value) {
             addCriterion("ActivityStartTime <", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeLessThanOrEqualTo(Date value) {
+        public Criteria andActivitystarttimeLessThanOrEqualTo(String value) {
             addCriterion("ActivityStartTime <=", value, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeIn(List<Date> values) {
+        public Criteria andActivitystarttimeLike(String value) {
+            addCriterion("ActivityStartTime like", value, "activitystarttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andActivitystarttimeNotLike(String value) {
+            addCriterion("ActivityStartTime not like", value, "activitystarttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andActivitystarttimeIn(List<String> values) {
             addCriterion("ActivityStartTime in", values, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeNotIn(List<Date> values) {
+        public Criteria andActivitystarttimeNotIn(List<String> values) {
             addCriterion("ActivityStartTime not in", values, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeBetween(Date value1, Date value2) {
+        public Criteria andActivitystarttimeBetween(String value1, String value2) {
             addCriterion("ActivityStartTime between", value1, value2, "activitystarttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitystarttimeNotBetween(Date value1, Date value2) {
+        public Criteria andActivitystarttimeNotBetween(String value1, String value2) {
             addCriterion("ActivityStartTime not between", value1, value2, "activitystarttime");
             return (Criteria) this;
         }
@@ -365,52 +374,62 @@ public class ActivityExample {
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeEqualTo(Date value) {
+        public Criteria andActivitycuttimeEqualTo(String value) {
             addCriterion("ActivityCutTime =", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeNotEqualTo(Date value) {
+        public Criteria andActivitycuttimeNotEqualTo(String value) {
             addCriterion("ActivityCutTime <>", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeGreaterThan(Date value) {
+        public Criteria andActivitycuttimeGreaterThan(String value) {
             addCriterion("ActivityCutTime >", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andActivitycuttimeGreaterThanOrEqualTo(String value) {
             addCriterion("ActivityCutTime >=", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeLessThan(Date value) {
+        public Criteria andActivitycuttimeLessThan(String value) {
             addCriterion("ActivityCutTime <", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeLessThanOrEqualTo(Date value) {
+        public Criteria andActivitycuttimeLessThanOrEqualTo(String value) {
             addCriterion("ActivityCutTime <=", value, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeIn(List<Date> values) {
+        public Criteria andActivitycuttimeLike(String value) {
+            addCriterion("ActivityCutTime like", value, "activitycuttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andActivitycuttimeNotLike(String value) {
+            addCriterion("ActivityCutTime not like", value, "activitycuttime");
+            return (Criteria) this;
+        }
+
+        public Criteria andActivitycuttimeIn(List<String> values) {
             addCriterion("ActivityCutTime in", values, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeNotIn(List<Date> values) {
+        public Criteria andActivitycuttimeNotIn(List<String> values) {
             addCriterion("ActivityCutTime not in", values, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeBetween(Date value1, Date value2) {
+        public Criteria andActivitycuttimeBetween(String value1, String value2) {
             addCriterion("ActivityCutTime between", value1, value2, "activitycuttime");
             return (Criteria) this;
         }
 
-        public Criteria andActivitycuttimeNotBetween(Date value1, Date value2) {
+        public Criteria andActivitycuttimeNotBetween(String value1, String value2) {
             addCriterion("ActivityCutTime not between", value1, value2, "activitycuttime");
             return (Criteria) this;
         }
@@ -485,63 +504,63 @@ public class ActivityExample {
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateIsNull() {
-            addCriterion("AcitvityState is null");
+        public Criteria andActivitystateIsNull() {
+            addCriterion("ActivityState is null");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateIsNotNull() {
-            addCriterion("AcitvityState is not null");
+        public Criteria andActivitystateIsNotNull() {
+            addCriterion("ActivityState is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateEqualTo(Boolean value) {
-            addCriterion("AcitvityState =", value, "acitvitystate");
+        public Criteria andActivitystateEqualTo(Boolean value) {
+            addCriterion("ActivityState =", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateNotEqualTo(Boolean value) {
-            addCriterion("AcitvityState <>", value, "acitvitystate");
+        public Criteria andActivitystateNotEqualTo(Boolean value) {
+            addCriterion("ActivityState <>", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateGreaterThan(Boolean value) {
-            addCriterion("AcitvityState >", value, "acitvitystate");
+        public Criteria andActivitystateGreaterThan(Boolean value) {
+            addCriterion("ActivityState >", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("AcitvityState >=", value, "acitvitystate");
+        public Criteria andActivitystateGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("ActivityState >=", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateLessThan(Boolean value) {
-            addCriterion("AcitvityState <", value, "acitvitystate");
+        public Criteria andActivitystateLessThan(Boolean value) {
+            addCriterion("ActivityState <", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateLessThanOrEqualTo(Boolean value) {
-            addCriterion("AcitvityState <=", value, "acitvitystate");
+        public Criteria andActivitystateLessThanOrEqualTo(Boolean value) {
+            addCriterion("ActivityState <=", value, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateIn(List<Boolean> values) {
-            addCriterion("AcitvityState in", values, "acitvitystate");
+        public Criteria andActivitystateIn(List<Boolean> values) {
+            addCriterion("ActivityState in", values, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateNotIn(List<Boolean> values) {
-            addCriterion("AcitvityState not in", values, "acitvitystate");
+        public Criteria andActivitystateNotIn(List<Boolean> values) {
+            addCriterion("ActivityState not in", values, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateBetween(Boolean value1, Boolean value2) {
-            addCriterion("AcitvityState between", value1, value2, "acitvitystate");
+        public Criteria andActivitystateBetween(Boolean value1, Boolean value2) {
+            addCriterion("ActivityState between", value1, value2, "activitystate");
             return (Criteria) this;
         }
 
-        public Criteria andAcitvitystateNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("AcitvityState not between", value1, value2, "acitvitystate");
+        public Criteria andActivitystateNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("ActivityState not between", value1, value2, "activitystate");
             return (Criteria) this;
         }
     }

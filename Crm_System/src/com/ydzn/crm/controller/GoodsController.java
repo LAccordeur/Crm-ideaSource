@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.FlashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,8 +41,13 @@ public class GoodsController {
     //更新商品信息
     @RequestMapping("/upadateGoodsInf")
     public void upadateGoodsInf(HttpServletRequest request,HttpServletResponse response) throws Exception{
+        request.setCharacterEncoding("GBK");
         String goodsID = request.getParameter("GoodsID");
-        Goods good = (Goods)request.getAttribute("Goods");
+        Goods good = new Goods();
+        good.setGoodsid(Integer.parseInt(request.getParameter("GoodsID")));
+        good.setGoodsmoney(Float.parseFloat(request.getParameter("GoodsMoney")));
+        good.setGoodsname(request.getParameter("GoodsName"));
+        good.setGoodsdetail(request.getParameter("GoodsDetail"));
 
         //测试数据
         //String goodsID="1";
@@ -55,19 +61,24 @@ public class GoodsController {
         if(goodsService.upadateGoodsInf(Integer.parseInt(goodsID),good)){
             // 把good封装成JSONObject
             // 输出响应
-            MyJsonResponse.responsePojo(response,good);
+            MyJsonResponse.responseObject(response,"boolean",true);
         }
     }
 
     //插入商品
     @RequestMapping("/insertGoods")
     public void insertGoods(HttpServletRequest request,HttpServletResponse response) throws Exception{
-        //Goods goods = (Goods) request.getAttribute("Goods");
+
+        request.setCharacterEncoding("GBK");
+        Goods good = new Goods();
+        good.setGoodsname(request.getParameter("GoodsName"));
+        good.setGoodsmoney(Float.valueOf(request.getParameter("GoodsMoney")));
+        good.setGoodsdetail(request.getParameter("GoodsDetail"));
         //测试数据
-        Goods good =new Goods();
-        good.setGoodsname("良心");
-        good.setGoodsmoney(2.2f);
-        good.setGoodsstorage(22);
+        //Goods good =new Goods();
+        //good.setGoodsname("良心");
+        //good.setGoodsmoney(2.2f);
+        //good.setGoodsstorage(22);
         if(goodsService.insertGoods(good)){
             // 把bool封装成JSONObject
             // 输出响应
@@ -77,8 +88,8 @@ public class GoodsController {
     //删除商品ByID
     @RequestMapping("/deleteGoods")
     public void deleteGoods(HttpServletRequest request,HttpServletResponse response) throws Exception{
-        //int goodsID = Integer.parseInt(request.getParameter("goodsID"));
-        int goodsID = 5;
+        int goodsID = Integer.parseInt(request.getParameter("GoodsID"));
+        //int goodsID = 5;
         if(goodsService.deleteGoods(goodsID)){
             // 把bool封装成JSONObject
             // 输出响应

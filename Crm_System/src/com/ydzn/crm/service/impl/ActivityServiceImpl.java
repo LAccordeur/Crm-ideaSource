@@ -40,9 +40,9 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public boolean updateActivityInfo(int activityID,Activity activity) throws Exception{
 
-        //activity.setActivityid(activityID);
+        activity.setActivityid(activityID);
 
-        if(activityMapper.updateByPrimaryKeyWithBLOBs(activity)>0)
+        if(activityExtendMapper.updateActivityInfo(activity) > 0)
             return  true;
         return false;
     }

@@ -32,7 +32,7 @@ public class BonusPointServiceImpl implements BonusPointService {
 
     //录入积分 添加消费记录
     @Override
-    public boolean logCreditAndHistory(int telephoneNumber, int bonusPoint, Map<Integer,Integer> goodsMap) throws Exception {
+    public boolean logCreditAndHistory(int telephoneNumber, int bonusPoint, Map<String,Integer> goodsMap) throws Exception {
         //设置观察变量
         int type = 0;
         //设置本次消费记录ID
@@ -68,8 +68,8 @@ public class BonusPointServiceImpl implements BonusPointService {
 
 
         //新增消费明细
-        for (Map.Entry<Integer,Integer> entry : goodsMap.entrySet()) {
-            int key = entry.getKey();
+        for (Map.Entry<String,Integer> entry : goodsMap.entrySet()) {
+            int key = Integer.parseInt(entry.getKey());
             int value = entry.getValue();
             Purchasedetail purchasedetail = new Purchasedetail();
             purchasedetail.setRecordid(recordID);

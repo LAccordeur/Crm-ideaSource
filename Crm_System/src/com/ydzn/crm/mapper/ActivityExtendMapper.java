@@ -12,6 +12,8 @@ public interface ActivityExtendMapper {
     //更新活动状态
     int updateAcitvityState(HashMap<String,Object> map) throws Exception;
 
+    //更新活动信息
+    int updateActivityInfo(Activity activity) throws Exception;
     //新增已编辑活动
     boolean insertActivity(Activity activity) throws Exception;
 }

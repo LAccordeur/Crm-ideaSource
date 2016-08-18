@@ -1,7 +1,5 @@
 package com.ydzn.crm.po;
 
-import java.util.Date;
-
 public class Activity {
     private Integer activityid;
 
@@ -9,9 +7,9 @@ public class Activity {
 
     private Integer accountid;
 
-    private Date activitystarttime;
+    private String activitystarttime;
 
-    private Date activitycuttime;
+    private String activitycuttime;
 
     private String activitydetail;
 
@@ -43,20 +41,20 @@ public class Activity {
         this.accountid = accountid;
     }
 
-    public Date getActivitystarttime() {
+    public String getActivitystarttime() {
         return activitystarttime;
     }
 
-    public void setActivitystarttime(Date activitystarttime) {
-        this.activitystarttime = activitystarttime;
+    public void setActivitystarttime(String activitystarttime) {
+        this.activitystarttime = activitystarttime == null ? null : activitystarttime.trim();
     }
 
-    public Date getActivitycuttime() {
+    public String getActivitycuttime() {
         return activitycuttime;
     }
 
-    public void setActivitycuttime(Date activitycuttime) {
-        this.activitycuttime = activitycuttime;
+    public void setActivitycuttime(String activitycuttime) {
+        this.activitycuttime = activitycuttime == null ? null : activitycuttime.trim();
     }
 
     public String getActivitydetail() {
@@ -67,11 +65,11 @@ public class Activity {
         this.activitydetail = activitydetail == null ? null : activitydetail.trim();
     }
 
-    public Boolean getAcitvitystate() {
+    public Boolean getActivitystate() {
         return activitystate;
     }
 
-    public void setAcitvitystate(Boolean activitystate) {
+    public void setActivitystate(Boolean activitystate) {
         this.activitystate = activitystate;
     }
 
