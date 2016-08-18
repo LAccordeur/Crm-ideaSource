@@ -89,4 +89,18 @@ public class BonusPointServiceImpl implements BonusPointService {
         List<Customer> list = customerExtendMapper.getCustomersCreditByOrder();
         return list;
     }
+
+    //查看指定会员消费明细
+    @Override
+    public List<Purchasehistory> getCustomerDetail(int customerID) throws Exception {
+        List<Purchasehistory> list = customerExtendMapper.getCustomerDetail(customerID);
+        return list;
+    }
+
+    //查看指定会员消费总额
+    @Override
+    public int getCustomerExpenditure(int customerID) throws Exception {
+        int sales = customerExtendMapper.getCustomerExpenditure(customerID);
+        return sales;
+    }
 }

@@ -3,6 +3,7 @@ package com.ydzn.crm.controller;
 import com.alibaba.fastjson.JSON;
 import com.ydzn.crm.controller.Json.MyJsonResponse;
 import com.ydzn.crm.po.Customer;
+import com.ydzn.crm.po.Purchasehistory;
 import com.ydzn.crm.service.BonusPointService;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -59,11 +60,29 @@ public class BonusPointController {
         List<Customer> list =  bonusPointService.getCustomersCreditByOrder();
         //list.get(0);
         if(list !=null){
-
             // 把list封装成JSONArray
             // 输出响应
             MyJsonResponse.responseList(response,list);
         }
+    }
 
+    //查看指定会员的消费明细
+    @RequestMapping("/getCustomerDetail")
+    public void getCustomerDetail(HttpServletRequest request,HttpServletResponse response) throws Exception{
+        int customerID = Integer.parseInt(request.getParameter("CustomerID"));
+        List<Purchasehistory> list = bonusPointService.getCustomerDetail(customerID);
+        // 把list封装成JSONArray
+        // 输出响应
+        MyJsonResponse.responseList(response,list);
+    }
+
+    //查看指定会员消费总金额
+    @RequestMapping("/getCustomerExpenditure")
+    public void getCustomerExpenditure(HttpServletRequest request,HttpServletResponse response) throws Exception{
+        int customerID = Integer.parseInt(request.getParameter("CustomerID"));
+        int expenditure = bonusPointService.getCustomerExpenditure(customerID);
+
+        //使用自定义json处理，响应客户端
+        MyJsonResponse.responseObject(response,"Expenditure",expenditure);
     }
 }

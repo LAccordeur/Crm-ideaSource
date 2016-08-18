@@ -2,6 +2,7 @@ package com.ydzn.crm.mapper;
 
 import com.ydzn.crm.po.Activity;
 import com.ydzn.crm.po.Customer;
+import com.ydzn.crm.po.Purchasehistory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,4 +21,9 @@ public interface CustomerExtendMapper {
     //查看已发布活动详情
     List<Activity> seeAcitvityInf() throws Exception;
 
+    //查看指定会员的消费明细
+    List<Purchasehistory> getCustomerDetail(int CustomerID) throws Exception;
+
+    //查看指定会员消费总额
+    int getCustomerExpenditure(int customerID) throws Exception;
 }

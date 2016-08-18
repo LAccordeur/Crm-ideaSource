@@ -2,6 +2,7 @@ package com.ydzn.crm.service;
 
 import com.ydzn.crm.po.Customer;
 import com.ydzn.crm.po.Goods;
+import com.ydzn.crm.po.Purchasehistory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,5 +18,10 @@ public interface BonusPointService {
     // 查看会员列表（显示会员积分榜）
     public List<Customer> getCustomersCreditByOrder() throws Exception;
 
+    //查看指定会员消费明细
+    public List<Purchasehistory> getCustomerDetail(int CustomerID) throws Exception;
+
+    //查看指定会员消费总额
+    public int getCustomerExpenditure(int customerID) throws Exception;
 
 }

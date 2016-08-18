@@ -60,6 +60,7 @@ public class ShopownerController {
     @RequestMapping("/updateShopownerInf")
     public  void updateShopownerInf(HttpServletRequest request, HttpServletResponse response) throws Exception{
 
+        request.setCharacterEncoding("GBK");
         //获取信息
         String userID = request.getParameter("AccountID");
         Shopowner owner = new Shopowner();
